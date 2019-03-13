@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<div class="login-block">
+  <h2 class="login-title">Get started!</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label>Your E-mail</label>
+    <input class="login-input" type="text" name="email" formControlName="login">
+
+    <label>Your Password</label>
+    <input class="login-input" type="password" formControlName="password">
+  </form>
+
+  <button class="button" type="submit">Log in</button>
+</div>
+

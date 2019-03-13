@@ -1,0 +1,21 @@
+.login-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #aaa;
+  height: 350px;
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 10;
+}
+.login-title {
+  text-transform: uppercase;
+  color: #458B00;
+}
+.login-input {
+  height: 20px;
+  padding: 5px;
+  margin: 10px;
+}

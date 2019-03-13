@@ -1,0 +1,13 @@
+.home {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+.logo {
+  font-size: 0;
+}
+.img {
+  height: 50px;
+  width: 220px;
+}
+
