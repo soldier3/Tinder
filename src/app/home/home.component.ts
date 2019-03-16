@@ -10,12 +10,15 @@ export class HomeComponent implements OnInit {
 
   user: User = {
     id: 123,
-    name: 'userName',
-    surname: 'userSurname',
-    old: 20,
-    email: 'user1@gmail.com',
+    login: 'userName',
     password: 'user123',
   };
+
+  // condition: boolean = false;
+
+  // logIn() {
+  //   this.condition = !this.condition;
+  // }
 
   constructor() { }
 
