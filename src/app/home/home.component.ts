@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/users';
+// import { User } from '../users';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +7,6 @@ import { User } from 'src/users';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  user: User = {
-    id: 123,
-    login: 'userName',
-    password: 'user123',
-  };
 
   // condition: boolean = false;
 

@@ -18,7 +18,11 @@
   padding: 5px;
   margin: 10px;
 }
-.button {
+.login-error {
+  color: #f00;
+  font-weight: 400;
+}
+.button:disabled {
   color: #aaa;
 }
 .button:enabled {
