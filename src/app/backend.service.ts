@@ -14,8 +14,8 @@ export class BackendService implements InMemoryDbService {
   createDb(){
 
     const  users =  [
-      {  id:  123,  login:  'user123', password: 'user123' },
-      {  id:  124,  login:  'user124', password: 'user124' },
+      {  id:  123, first_name: 'user123', last_name: 'user123', login:  'user123', password: 'user123' },
+      {  id:  124, first_name: 'user124', last_name: 'user124', login:  'user124', password: 'user124' },
     ];
 
     return {users};

@@ -1,32 +1,42 @@
-.login-block {
+.reg-block {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   background-color: #aaa;
-  height: 350px;
+  height: 450px;
   width: 300px;
   text-align: center;
   margin: 0 auto;
 }
-.login-title {
+.reg-title {
   text-transform: uppercase;
   color: #458B00;
 }
-.login-input {
+.reg-input {
   height: 20px;
   padding: 5px;
   margin: 10px;
 }
-.login-error {
+.reg-error {
   color: #f00;
   font-weight: 400;
 }
-.button:disabled {
+.reg-button:disabled {
   color: #aaa;
 }
-.button:enabled {
+.reg-button:enabled {
   color: #fff;
   font-weight: 600;
   background-color: #458B00;
+}
+.reg-button {
+  text-transform: uppercase;
+  background-color: #fff;
+  font-weight: 600;
+  color: #458B00;
+  border-radius: 25%;
+  border: none;
+  width: 150px;
+  height: 35px;
 }

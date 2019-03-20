@@ -5,17 +5,19 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { LogInComponent } from './log-in/log-in.component';
+import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { BackendService } from './backend.service';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LogInComponent,
+    LoginComponent,
     UserComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
