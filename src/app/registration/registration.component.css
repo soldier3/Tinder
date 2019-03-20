@@ -8,6 +8,8 @@
   width: 300px;
   text-align: center;
   margin: 0 auto;
+  padding: 20px;
+  position: relative;
 }
 .reg-title {
   text-transform: uppercase;

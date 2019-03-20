@@ -10,6 +10,9 @@ import { UserComponent } from './user/user.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { BackendService } from './backend.service';
 import { RegistrationComponent } from './registration/registration.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { MessagesComponent } from './user/messages/messages.component';
+import { FilmsComponent } from './user/films/films.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { RegistrationComponent } from './registration/registration.component';
     LoginComponent,
     UserComponent,
     RegistrationComponent,
+    ProfileComponent,
+    MessagesComponent,
+    FilmsComponent,
   ],
   imports: [
     BrowserModule,
