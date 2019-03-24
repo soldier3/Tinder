@@ -4,19 +4,19 @@
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
 
     <label>First Name</label>
-    <input class="reg-input" type="name" formControlName="first_name" placeholder="First name" required>
+    <input class="reg-input" name="first_name" type="text" formControlName="first_name" placeholder="First name" required> <!-- [(ngModel)]="user.first_name"  -->
 
     <label>Last Name</label>
-    <input class="reg-input" type="name" formControlName="last_name" placeholder="Last name" required>
+    <input class="reg-input" name="last_name" type="text" formControlName="last_name" placeholder="Last name" required> <!-- [(ngModel)]="user.last_name"  -->
 
     <label>Login</label>
-    <input class="reg-input" type="text" formControlName="login" placeholder="Login" required>
+    <input class="reg-input" name="login" type="text" formControlName="login" placeholder="Login" required>  <!-- [(ngModel)]="user.login"  -->
     <p *ngIf="userForm.get('login').errors?.minlength" class="reg-error">Your login is to short</p>
 
     <br>
 
     <label>Password</label>
-    <input class="reg-input" type="password" formControlName="password" placeholder="Password" required>
+    <input class="reg-input" name="password" type="password" formControlName="password" placeholder="Password" required> <!-- [(ngModel)]="user.password"  -->
     <p *ngIf="userForm.get('password').errors?.minlength" class="reg-error">Your password is to short</p>
     <p *ngIf="userForm.get('password').errors?.pattern" class="reg-error">Incorrect password</p>
     <br><br>

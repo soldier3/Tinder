@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTabChangeEvent } from '@angular/material';
 
 @Component({
   selector: 'app-user',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  public tabChanged(tabChangeEvent: MatTabChangeEvent): void {
+    console.log(tabChangeEvent);
+  }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 }
