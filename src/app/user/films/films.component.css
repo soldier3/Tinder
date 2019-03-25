@@ -1,2 +1,18 @@
-
-
+h4 {
+  padding: 20px;
+}
+.button:disabled {
+  margin-top: 40px;
+  color: #fff;
+  background-color: #aaa;
+}
+.button:enabled {
+  margin-top: 40px;
+  color: #fff;
+  font-weight: 600;
+  background-color: #458B00;
+}
+.text-cinema {
+  color: #aaa;
+  font-weight: 400;
+}

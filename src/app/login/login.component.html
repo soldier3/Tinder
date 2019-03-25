@@ -1,21 +1,21 @@
 <div class="login-block">
-  <h2 class="login-title">Get started!</h2>
+  <h2 class="login-title">Розпочнемо!</h2>
 
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
 
-    <label>Enter your Login</label>
+    <label>Введіть логін</label>
     <input class="login-input" name="login" type="text" formControlName="login" required>  <!--  [(ngModel)]="user.login" -->
     <br>
 
-    <label>Enter your Password</label>
+    <label>Введіть пароль</label>
     <input class="login-input" name="password" type="password" formControlName="password" required>  <!--  [(ngModel)]="user.password" -->
     <br>
 
-    <button class="button" type="submit" [disabled]="userForm.invalid" routerLink="/user">Log in</button>
+    <button class="button" type="submit" [disabled]="userForm.invalid" routerLink="/user">Увійти</button>
   </form>
 
-  <p>If you have not already registered, please fill out the registration form.</p>
-  <button class="reg-button" type="submit" routerLink="/registration">Registration</button>
+  <p>Якщо Ви ще не зареєстровані,<br>будь ласка, заповніть форму Реєстрації.</p>
+  <button class="reg-button" type="submit" routerLink="/registration">Реєстрація</button>
 
   <router-outlet></router-outlet>
 </div>

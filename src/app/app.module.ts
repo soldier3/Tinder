@@ -14,7 +14,7 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { MessagesComponent } from './user/messages/messages.component';
 import { FilmsComponent } from './user/films/films.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTabsModule } from '@angular/material';
+import { MatTabsModule, MatSelectModule, MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -33,6 +33,8 @@ import { MatTabsModule } from '@angular/material';
     ReactiveFormsModule,
     FormsModule,
     MatTabsModule,
+    MatSelectModule,
+    MatInputModule,
     InMemoryWebApiModule.forRoot(BackendService),
     BrowserAnimationsModule
   ],
