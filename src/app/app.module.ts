@@ -7,14 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { BackendService } from './backend.service';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { MessagesComponent } from './user/messages/messages.component';
 import { FilmsComponent } from './user/films/films.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTabsModule, MatSelectModule, MatInputModule } from '@angular/material';
+import { MatTabsModule, MatSelectModule, MatInputModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -35,8 +33,8 @@ import { MatTabsModule, MatSelectModule, MatInputModule } from '@angular/materia
     MatTabsModule,
     MatSelectModule,
     MatInputModule,
-    InMemoryWebApiModule.forRoot(BackendService),
-    BrowserAnimationsModule
+    MatButtonModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

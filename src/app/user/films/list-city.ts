@@ -1,18 +1,18 @@
 import { City } from './city';
 
 export const CITIES: City[] = [
-    {
-        city: 'ivano-frankovsk',
-        viewCity: 'Івано-Франківськ',
-        cinemas: ['liniakino-kosmos'],
-        viewCinema: ['Лінія кіно "Космос"']
-    },
-    {
-        city: 'vinnica',
-        viewCity: 'Вінниця',
-        cinemas: ['kocubinsky'],
-        viewCinema: ['Кінотеатр ім.М.Коцюбинського']
-      },
+    // {
+    //     city: 'ivano-frankovsk',
+    //     viewCity: 'Івано-Франківськ',
+    //     cinemas: ['liniakino-kosmos'],
+    //     viewCinema: ['Лінія кіно "Космос"']
+    // },
+    // {
+    //     city: 'vinnica',
+    //     viewCity: 'Вінниця',
+    //     cinemas: ['kocubinsky'],
+    //     viewCinema: ['Кінотеатр ім.М.Коцюбинського']
+    //   },
     // {
     //     city: 'dnepropetrovsk',
     //     viewCity: 'Дніпро',
@@ -73,16 +73,16 @@ export const CITIES: City[] = [
     //     cinemas: ['pk-sumy'],
     //     viewCinema: ['Планета кіно']
     // },
-    // {
-    //     city: 'kherson',
-    //     viewCity: 'Херсон',
-    //     cinemas: ['mx-herson-fab'],
-    //     viewCinema: ['Мультіплекс ТРЦ «Фабрика»']
-    // },
-    // {
-    //     city: 'cherkassy',
-    //     viewCity: 'Черкаси',
-    //     cinemas: ['mx-cher-lubava', 'mx-cher-dnipro', 'ukraina-cherkassy'],
-    //     viewCinema: ['Мультіплекс «Любава»', 'Мультіплекс ТРЦ «Дніпро Плаза»', 'Кінотеатр «Україна»']
-    // },
+    {
+        city: 'kherson',
+        viewCity: 'Херсон',
+        cinemas: ['mx-herson-fab'],
+        viewCinema: ['Мультіплекс ТРЦ «Фабрика»']
+    },
+    {
+        city: 'cherkassy',
+        viewCity: 'Черкаси',
+        cinemas: ['mx-cher-lubava', 'mx-cher-dnipro', 'ukraina-cherkassy'],
+        viewCinema: ['Мультіплекс «Любава»', 'Мультіплекс ТРЦ «Дніпро Плаза»', 'Кінотеатр «Україна»']
+    },
 ];

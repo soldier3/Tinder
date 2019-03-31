@@ -16,13 +16,7 @@
   color: #458B00;
 }
 .reg-input {
-  height: 20px;
-  padding: 5px;
-  margin: 10px;
-}
-.reg-error {
-  color: #f00;
-  font-weight: 400;
+  width: 300px;;
 }
 .reg-button:disabled {
   color: #aaa;
@@ -37,8 +31,21 @@
   background-color: #fff;
   font-weight: 600;
   color: #458B00;
-  border-radius: 25%;
   border: none;
   width: 170px;
   height: 35px;
+}
+
+.btn-link {
+  font-weight: 400;
+  color: #458B00;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 20px;
+}
+.btn-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+  background-color: transparent;
+  border-color: transparent;
 }

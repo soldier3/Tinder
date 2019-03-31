@@ -16,9 +16,7 @@
   color: #458B00;
 }
 .login-input {
-  height: 20px;
-  padding: 5px;
-  margin: 10px;
+  width: 300px;
 }
 .login-error {
   color: #f00;
@@ -37,7 +35,6 @@
   background-color: #458B00;
   font-weight: 600;
   color: #fff;
-  border-radius: 25%;
   border: none;
   width: 150px;
   height: 35px;

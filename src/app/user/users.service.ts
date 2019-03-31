@@ -19,6 +19,10 @@ export class UsersService {
 
   constructor( private http: HttpClient) { }
 
+  register(user: User) {
+    return this.http.post(`/auth/signup`, user);
+  }
+
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);
   }
