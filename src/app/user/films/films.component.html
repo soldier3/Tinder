@@ -1,42 +1,28 @@
 <form #cityForm="ngForm" (ngSubmit)="onSubmit()">
-<div>
-  <h4>Оберіть місто:</h4>
-  <mat-form-field>
-    <mat-label>Місто</mat-label>
-    <mat-select [(ngModel)]="selectedCity" name="city"
-                [formControl]="cityControl" required>
-      <mat-option></mat-option>
-      <mat-option *ngFor="let city of cities"
-                  [value]="city"
-                  (click)="onSelect(city)">
-        {{city.viewCity}}
-      </mat-option>
-    </mat-select>
-    <mat-error *ngIf="cityControl.hasError('required')">Будь-ласка, оберіть місто</mat-error>
-  </mat-form-field>
-  <p class="text-cinema"> Обране місто: {{cityControl.value?.viewCity}} </p>
-</div>
+  <div>
+    <h4>Оберіть місто:</h4>
+    <mat-form-field>
+    <mat-label>Country</mat-label>
+      <select matNativeControl [formControl]="cityControl" required (change)="changeCountry($event.target.value)">
+        <option></option>
+        <option *ngFor ="let count of countryList">{{count.name}} </option>
+      </select>
+      <mat-error *ngIf="cityControl.hasError('required')">Будь-ласка, оберіть місто</mat-error>
+    </mat-form-field>
+  </div>
 
-<div *ngIf="selectedCity">
-  <h4>Оберіть кінотеатр:</h4>
-  <mat-form-field>
-    <mat-label>Кінотеатр</mat-label>
-    <mat-select [(ngModel)]="selectedCinema" name="cinemas"
-                [formControl]="cinemaControl" required >
-      <mat-option></mat-option>
-      <mat-option *ngFor="let cinemas of cities"
-                  [value]="cinemas"
-                  (click)=onSelected(cinemas)>
-        {{cinemas.viewCinema}}
-      </mat-option>
-    </mat-select>
-    <mat-error *ngIf="cinemaControl.hasError('required')">Будь-ласка, оберіть кінотеатр</mat-error>
-  </mat-form-field>
-  <p class="text-cinema"> Обраний кінотеатр: {{cinemaControl.value?.viewCinema}} </p>
-</div>
+  <div>
+    <h4>Оберіть кінотеатр:</h4>
+    <mat-form-field>
+    <mat-label>City</mat-label>
+      <select matNativeControl [formControl]="cinemaControl" required>
+        <option></option>
+        <option *ngFor ="let city of cities">{{city}}</option>
+      </select>
+      <mat-error *ngIf="cinemaControl.hasError('required')">Будь-ласка, оберіть кінотеатр</mat-error>
+    </mat-form-field>
+  </div>
 
-<button type="submit" class="button" [disabled]="!cityControl.valid || !cinemaControl.valid">Пошук</button>
+  <button type="submit" class="button" [disabled]="!cityControl.valid || !cinemaControl.valid">Пошук</button>
+
 </form>
-<div *ngIf="payLoad">
-  <strong>Following values</strong><br>{{payLoad}}
-</div>

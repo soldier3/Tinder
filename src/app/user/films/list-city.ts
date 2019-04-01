@@ -74,15 +74,15 @@ export const CITIES: City[] = [
     //     viewCinema: ['Планета кіно']
     // },
     {
-        city: 'kherson',
+        name: 'kherson',
         viewCity: 'Херсон',
-        cinemas: ['mx-herson-fab'],
+        cities: ['mx-herson-fab'],
         viewCinema: ['Мультіплекс ТРЦ «Фабрика»']
     },
     {
-        city: 'cherkassy',
+        name: 'cherkassy',
         viewCity: 'Черкаси',
-        cinemas: ['mx-cher-lubava', 'mx-cher-dnipro', 'ukraina-cherkassy'],
+        cities: ['mx-cher-lubava', 'mx-cher-dnipro', 'ukraina-cherkassy'],
         viewCinema: ['Мультіплекс «Любава»', 'Мультіплекс ТРЦ «Дніпро Плаза»', 'Кінотеатр «Україна»']
     },
 ];

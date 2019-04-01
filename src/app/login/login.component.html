@@ -5,7 +5,7 @@
 
     <mat-form-field appearance="outline" class="login-input">
       <mat-label>Введіть електронну пошту</mat-label>
-      <input matInput name="email" type="text" formControlName="email" required>  <!--  [(ngModel)]="user.login" -->
+      <input matInput name="email" type="text" formControlName="email" required>  <!--  [(ngModel)]="user.email" -->
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="login-input">
@@ -14,7 +14,7 @@
     </mat-form-field>
 
     <br>
-    <button class="button" type="submit" [disabled]="userForm.invalid" routerLink="/user">Увійти</button>
+    <button class="button" type="submit" [disabled]="userForm.invalid" routerLink="/user" (click)="submit(user)">Увійти</button>
   </form>
 
   <p>Якщо Ви ще не зареєстровані,<br>будь ласка, заповніть форму Реєстрації.</p>

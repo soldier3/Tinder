@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
-import { City } from './city';
+// import { CityService } from './city.service';
 import { CITIES } from './list-city';
-import {  CityService } from './city.service';
 
 @Component({
   selector: 'app-films',
@@ -12,34 +11,20 @@ import {  CityService } from './city.service';
 })
 export class FilmsComponent implements OnInit {
 
-  cities: City[];
-
-  cinemas: City['cinemas'];
-
-  selectedCity: City;
-  selectedCinema: City["cinemas"];
-  payLoad = '';
-
   cityControl = new FormControl('', [Validators.required]);
   cinemaControl = new FormControl('', [Validators.required]);
 
-  constructor(private cityService: CityService) { }
+  countryList: Array<any> = CITIES;
+
+  cities: Array<any>;
+
+  constructor() { }
 
   ngOnInit() {
-    this.getCities();
   }
 
-  onSelect(city: City): void {
-    this.selectedCity = city;
-  }
-
-  getCities(): void {
-    this.cityService.getCity()
-      .subscribe(cities => this.cities = cities);
-  }
-
-  onSubmit() {
-    this.payLoad = JSON.stringify(this.selectedCity);
+  changeCountry(count) {
+    this.cities = this.countryList.find(con => con.name == count).cities;
   }
 }
 

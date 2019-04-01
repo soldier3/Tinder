@@ -1,6 +1,6 @@
 export class City {
-    city: string;
+    name: string;
     viewCity: string;
-    cinemas: Array<string>;
+    cities: Array<string>;
     viewCinema: Array<string>;
 }
