@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import { City } from './city';
+import { Cities } from './city';
 import { CITIES } from './list-city';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { CITIES } from './list-city';
 })
 export class CityService {
 
-  getCity(): Observable<City[]> {
+  getCity(): Observable<Cities[]> {
     return of(CITIES);
   }
 

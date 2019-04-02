@@ -1,6 +1,6 @@
-export class City {
-    name: string;
+export class Cities {
+    city: string;
     viewCity: string;
-    cities: Array<string>;
+    cinemas: Array<string>;
     viewCinema: Array<string>;
 }

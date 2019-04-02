@@ -2,27 +2,33 @@
   <div>
     <h4>Оберіть місто:</h4>
     <mat-form-field>
-    <mat-label>Country</mat-label>
-      <select matNativeControl [formControl]="cityControl" required (change)="changeCountry($event.target.value)">
+    <mat-label>Місто</mat-label>
+      <select matNativeControl [(ngModel)]="selectedCity" [formControl]="cityControl" required (change)="changeCountry($event.target.value)">
         <option></option>
-        <option *ngFor ="let count of countryList">{{count.name}} </option>
+        <option *ngFor ="let count of countryList">{{count.city}} </option>
       </select>
       <mat-error *ngIf="cityControl.hasError('required')">Будь-ласка, оберіть місто</mat-error>
     </mat-form-field>
+    <p class="text-cinema"> Обране місто: {{selectedCity | json}}</p>
   </div>
 
   <div>
     <h4>Оберіть кінотеатр:</h4>
     <mat-form-field>
-    <mat-label>City</mat-label>
-      <select matNativeControl [formControl]="cinemaControl" required>
+    <mat-label>Кінотеатр</mat-label>
+      <select matNativeControl [(ngModel)]="selectedCinema" [formControl]="cinemaControl" required>
         <option></option>
-        <option *ngFor ="let city of cities">{{city}}</option>
+        <option *ngFor ="let cinema of cinemas">{{cinema}}</option>
       </select>
       <mat-error *ngIf="cinemaControl.hasError('required')">Будь-ласка, оберіть кінотеатр</mat-error>
     </mat-form-field>
+    <p class="text-cinema"> Обраний кінотеатр: {{selectedCinema | json}}</p>
   </div>
 
   <button type="submit" class="button" [disabled]="!cityControl.valid || !cinemaControl.valid">Пошук</button>
 
 </form>
+
+<div *ngIf="payLoad">
+  <strong>Following values</strong><br>{{payLoad}}
+</div>

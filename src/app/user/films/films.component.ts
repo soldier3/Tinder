@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 
 // import { CityService } from './city.service';
 import { CITIES } from './list-city';
+import { Cities } from './city';
 
 @Component({
   selector: 'app-films',
@@ -16,7 +17,12 @@ export class FilmsComponent implements OnInit {
 
   countryList: Array<any> = CITIES;
 
-  cities: Array<any>;
+  cinemas: Array<any>;
+
+  selectedCity: Cities;
+  selectedCinema: Cities["cinemas"];
+
+  payLoad = '';
 
   constructor() { }
 
@@ -24,7 +30,11 @@ export class FilmsComponent implements OnInit {
   }
 
   changeCountry(count) {
-    this.cities = this.countryList.find(con => con.name == count).cities;
+    this.cinemas = this.countryList.find(con => con.city == count).cinemas;
+  }
+
+  onSubmit() {
+    this.payLoad = JSON.stringify(this.selectedCity);
   }
 }
 
