@@ -4,8 +4,8 @@
   justify-content: space-around;
   align-items: center;
   background-color: #aaa;
-  height: 450px;
-  width: 300px;
+  min-height: 450px;
+  width: 640px;
   text-align: center;
   margin: 0 auto;
   padding: 20px;
@@ -16,7 +16,11 @@
   color: #458B00;
 }
 .reg-input {
-  width: 300px;;
+  width: 300px;
+  margin: 0 10px;
+}
+.reg-input-age {
+  width: 100px;
 }
 .reg-button:disabled {
   color: #aaa;
@@ -48,4 +52,15 @@
   text-decoration: underline;
   background-color: transparent;
   border-color: transparent;
+}
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+  width: 300px;
+}
+.gender-age {
+  display: flex;
+  justify-content: space-around;
 }

@@ -1,19 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
-
-import { tap } from  'rxjs/operators';
-// import { Observable, BehaviorSubject } from  'rxjs';
-
-// import { User } from '../users';
-// import { JwtResponse } from '../jwt-response';
-
-// const httpOptions = {
-//   headers: new HttpHeaders({
-//     'Content-Type':  'application/json',
-//     'Authorization': 'my-auth-token'
-//   })
-// };
 
 @Injectable({
   providedIn: 'root'
@@ -21,12 +7,30 @@ import { tap } from  'rxjs/operators';
 
 export class AuthenticationService {
 
-  // AUTH_SERVER = "https://tindermoviebackend.herokuapp.com/";
+  AUTH_SERVER = "https://tindermoviebackend.herokuapp.com/";
 
   // private registerUrl = 'https://tindermoviebackend.herokuapp.com/auth/signup';
   // private loginUrl = 'https://tindermoviebackend.herokuapp.com/auth/signin';
 
   constructor(private httpClient: HttpClient) { }
+
+  registerUser(user) {
+    console.log('AuthService registerUser', user);
+    return this.httpClient.post<any>(`${this.AUTH_SERVER}v1/auth/signup`, user);
+  }
+
+  loginUser(user) {
+      console.log('AuthService loginUser', user);
+      return this.httpClient.post<any>(`${this.AUTH_SERVER}v1/auth/signin`, user);
+  }
+
+  loggedIn() {
+    return !!localStorage.getItem('token');
+  }
+}
+
+
+
 
   // login(email: string, password: string) {
   //   return this.httpClient.post<{access_token: string}>(`${this.loginUrl}`, {email, password}, httpOptions).pipe(
@@ -42,11 +46,6 @@ export class AuthenticationService {
     // }))
   // }
 
-  // logout() {
-  //   localStorage.removeItem('access_token');
-  // }
-
   // public get loggedIn(): boolean{
   //   return localStorage.getItem('access_token') !==  null;
   // }
-}

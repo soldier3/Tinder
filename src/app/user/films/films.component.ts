@@ -15,7 +15,7 @@ export class FilmsComponent implements OnInit {
   cityControl = new FormControl('', [Validators.required]);
   cinemaControl = new FormControl('', [Validators.required]);
 
-  countryList: Array<any> = CITIES;
+  cityList: Array<any> = CITIES;
 
   cinemas: Array<any>;
 
@@ -29,12 +29,12 @@ export class FilmsComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeCountry(count) {
-    this.cinemas = this.countryList.find(con => con.city == count).cinemas;
+  changeCity(count) {
+    this.cinemas = this.cityList.find(con => con.city == count).viewCinema;
   }
 
   onSubmit() {
-    this.payLoad = JSON.stringify(this.selectedCity);
+    this.payLoad = JSON.stringify(this.selectedCinema);
   }
 }
 

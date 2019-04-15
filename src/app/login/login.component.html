@@ -5,21 +5,21 @@
 
     <mat-form-field appearance="outline" class="login-input">
       <mat-label>Введіть електронну пошту</mat-label>
-      <input matInput name="email" type="text" formControlName="email" required>  <!--  [(ngModel)]="user.email" -->
+      <input matInput [(ngModel)]="loginUserData.email" name="email" type="text" formControlName="email" required>  <!--  [(ngModel)]="user.email" -->
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="login-input">
       <mat-label>Введіть пароль</mat-label>
-      <input matInput name="password" type="password" formControlName="password" required>  <!--  [(ngModel)]="user.password" -->
+      <input matInput [(ngModel)]="loginUserData.password" name="password" type="password" formControlName="password" required>  <!--  [(ngModel)]="user.password" -->
     </mat-form-field>
 
     <br>
-    <button class="button" type="submit" [disabled]="userForm.invalid" routerLink="/user" (click)="submit(user)">Увійти</button>
+    <button class="button" type="submit" [disabled]="userForm.invalid" (click)="loginUser()">Увійти</button>
   </form>
 
   <p>Якщо Ви ще не зареєстровані,<br>будь ласка, заповніть форму Реєстрації.</p>
-  <button class="reg-button" type="submit" routerLink="/auth/signup">Реєстрація</button>
+  <button class="reg-button" type="submit" (click)="goToRegistration()">Реєстрація</button>
 
-  <router-outlet></router-outlet>
 </div>
 
+<router-outlet></router-outlet>

@@ -5,7 +5,7 @@ export const CITIES: Cities[] = [
       city: 'ivano-frankovsk',
       viewCity: 'Івано-Франківськ',
       cinemas: ['liniakino-kosmos'],
-      viewCinema: ['Лінія кіно "Космос"']
+      viewCinema: ['Лінія кіно «Космос»']
     },
     {
       city: 'vinnica',
@@ -53,12 +53,14 @@ export const CITIES: Cities[] = [
       viewCity: 'Львів',
       cinemas: ['filmcenter', 'kp-lvov', 'kp-kopernik', 'kp-dovjenko', 'mx-lviv-victoriagardens', 'pk-lvov2', 'pk-lvov'],
       viewCinema: ['Lviv Film Center', 'Кінопалац', 'Кінопалац "Коперник"', 'Кінопалац ім. Довженка', 'Мультіплекс «Victoria Gardens»', 'Планета кіно (King Cross)', 'Планета кіно (Forum Lviv)']
+
     },
     {
       city: 'odessa',
       viewCity: 'Одеса',
       cinemas: ['kinoodessa-kinostar', 'kinoodessa-moskva', 'pk-odessa', 'pk-odessa2', 'kinoodessa-rodina'],
       viewCinema: ['Одесакіно Кіностар', 'Одесакіно Москва', 'Планета кіно (Котовського)', 'Планета кіно (Таирова)', 'Одесакіно Родина']
+
     },
     {
       city: 'poltava',

@@ -3,9 +3,9 @@
     <h4>Оберіть місто:</h4>
     <mat-form-field>
     <mat-label>Місто</mat-label>
-      <select matNativeControl [(ngModel)]="selectedCity" [formControl]="cityControl" required (change)="changeCountry($event.target.value)">
+      <select matNativeControl [(ngModel)]="selectedCity" [formControl]="cityControl" required (change)="changeCity($event.target.value)">
         <option></option>
-        <option *ngFor ="let count of countryList">{{count.city}} </option>
+        <option *ngFor ="let count of cityList" [value]="count.city">{{count.viewCity}} </option>
       </select>
       <mat-error *ngIf="cityControl.hasError('required')">Будь-ласка, оберіть місто</mat-error>
     </mat-form-field>
@@ -18,7 +18,7 @@
     <mat-label>Кінотеатр</mat-label>
       <select matNativeControl [(ngModel)]="selectedCinema" [formControl]="cinemaControl" required>
         <option></option>
-        <option *ngFor ="let cinema of cinemas">{{cinema}}</option>
+        <option *ngFor ="let cinema of cinemas" [value]="cinema">{{cinema}}</option>
       </select>
       <mat-error *ngIf="cinemaControl.hasError('required')">Будь-ласка, оберіть кінотеатр</mat-error>
     </mat-form-field>

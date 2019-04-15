@@ -28,3 +28,8 @@
   text-align: center;
   padding: 50px;
 }
+.buttons--align {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
