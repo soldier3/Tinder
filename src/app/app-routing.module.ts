@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [ { path: 'v1/auth/signin', component: LoginComponent },
                 { path: 'v1/auth/signup', component: RegistrationComponent } ]
 },
-  { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
+  { path: 'v1/user', component: UserComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

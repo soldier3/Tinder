@@ -16,6 +16,7 @@ export class RegistrationComponent implements OnInit {
   users: User[];
   registrationForm: FormGroup;
 
+  // user = {};
   private user: User;
   cityList: Array<any> = CITIES;
 
@@ -80,7 +81,7 @@ export class RegistrationComponent implements OnInit {
 
   registerUser() {
     console.log('RegisterData: ', this.user);
-    this.auth.registerUser(this.user)
+    this.auth.registerUser(JSON.stringify(this.user))
         .subscribe(
             result => {
                 console.log('result is:');
