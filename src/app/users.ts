@@ -7,8 +7,4 @@ export class User {
   gender: string;
   city: string;
   age: number;
-
-  constructor(values: Object ={}) {
-    Object.assign(this, values);
-  }
 }

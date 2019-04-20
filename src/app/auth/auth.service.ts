@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-// const httpOptions = {
-//   headers: new HttpHeaders({
-//     'Content-Type':  'application/json',
-//     'Authorization': 'my-auth-token'
-//   })
-// };
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Authorization': 'my-auth-token'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -23,36 +23,19 @@ export class AuthenticationService {
 
   registerUser(user) {
     console.log('AuthService registerUser', user);
-    return this.httpClient.post<any>(`${this.AUTH_SERVER}v1/auth/signup`, user);
+    const body = JSON.stringify(user);
+    console.log('body=', body);
+    return this.httpClient.post<any>(`${this.AUTH_SERVER}v1/auth/signup`, body, httpOptions);
   }
 
   loginUser(user) {
       console.log('AuthService loginUser', user);
-      return this.httpClient.post<any>(`${this.AUTH_SERVER}v1/auth/signin`, user);
+      const body = user;
+      console.log('body=', body);
+      return this.httpClient.post<any>(`${this.AUTH_SERVER}v1/auth/signin`, body, httpOptions);
   }
 
   loggedIn() {
     return !!localStorage.getItem('token');
   }
 }
-
-
-
-
-  // login(email: string, password: string) {
-  //   return this.httpClient.post<{access_token: string}>(`${this.loginUrl}`, {email, password}, httpOptions).pipe(
-  //     tap(res => {
-  //         localStorage.setItem('access_token', res.access_token);
-  //   }))
-  // }
-
-  // register(username: string, password:string, email:string, phone: string) {
-  //   return this.httpClient.post<{access_token: string}>(`${this.registerUrl}`, {username, password, email, phone}, httpOptions)
-    // .pipe(tap(res => {
-    //       this.login(email, password)
-    // }))
-  // }
-
-  // public get loggedIn(): boolean{
-  //   return localStorage.getItem('access_token') !==  null;
-  // }

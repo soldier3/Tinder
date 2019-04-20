@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, NgForm, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { User } from '../users';
 import { CITIES } from '../user/films/list-city';
 import { AuthenticationService } from '../auth/auth.service';
 
@@ -13,11 +12,8 @@ import { AuthenticationService } from '../auth/auth.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  users: User[];
   registrationForm: FormGroup;
 
-  // user = {};
-  private user: User;
   cityList: Array<any> = CITIES;
 
   genders = [
@@ -32,7 +28,7 @@ export class RegistrationComponent implements OnInit {
     private formbilder: FormBuilder,
     private router: Router,
     private auth: AuthenticationService,
-    ) { }
+  ) { }
 
 
   ngOnInit() {
@@ -65,31 +61,25 @@ export class RegistrationComponent implements OnInit {
         Validators.pattern(this.passwordRegex)
       ])),
     });
-
-    this.user = new User({
-      username: "", city: this.cityList[0], email: "", phone: "",
-      gender: this.genders[0], age: "", password: "",});
-
   }
 
   onSubmit(){
     if (this.registrationForm.invalid) {
       return;
     }
-    console.log('Реєстраційні дані:' + JSON.stringify(this.registrationForm.value))
   }
 
   registerUser() {
-    console.log('RegisterData: ', this.user);
-    this.auth.registerUser(JSON.stringify(this.user))
+    console.log('Реєстраційні дані:' + JSON.stringify(this.registrationForm.value))
+    this.auth.registerUser(this.registrationForm.value)
         .subscribe(
-            result => {
-                console.log('result is:');
-                console.log(result.token);
-                localStorage.setItem('token', result.token);
-                this.router.navigate(['v1/auth/signin']);
-            },
-            err => console.log(err)
+          data => {
+            console.log('data', data);
+            localStorage.setItem('token', data.token);
+            console.log(data.token);
+            this.router.navigate(['v1/auth/signin']);
+          },
+            error => console.log(error)
         );
   }
 

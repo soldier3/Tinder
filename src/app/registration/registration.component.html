@@ -5,12 +5,12 @@
 
     <mat-form-field appearance="outline" class="reg-input">
       <mat-label>Ім'я</mat-label>
-      <input matInput [(ngModel)]="user.username" name="username" type="text" formControlName="username" placeholder="Ім'я" required>
+      <input matInput name="username" type="text" formControlName="username" placeholder="Ім'я" required>
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="reg-input">
       <mat-label>Місто</mat-label>
-      <select matNativeControl [(ngModel)]="user.city" formControlName="city" required>
+      <select matNativeControl formControlName="city" required>
         <option *ngFor ="let city of cityList" [value]="city.city">{{city.viewCity}} </option>
       </select>
       <mat-error *ngIf="registrationForm.get('city').errors?.required">Будь-ласка, оберіть місто</mat-error>
@@ -18,7 +18,7 @@
 
     <mat-form-field appearance="outline" class="reg-input">
       <mat-label>Електронна адреса</mat-label>
-      <input matInput [(ngModel)]="user.email" name="email" type="email" formControlName="email" placeholder="Електронна адреса" required>
+      <input matInput name="email" type="email" formControlName="email" placeholder="Електронна адреса" required>
       <mat-error *ngIf="registrationForm.get('email').errors?.email">
         Неправильна електронна адреса
       </mat-error>
@@ -26,26 +26,26 @@
 
     <mat-form-field appearance="outline" class="reg-input">
       <mat-label>Телефон</mat-label>
-      <input matInput [(ngModel)]="user.phone" name="phone" type="number" placeholder="Телефон" formControlName="phone" required>
+      <input matInput name="phone" type="number" placeholder="Телефон" formControlName="phone" required>
       <mat-error *ngIf="registrationForm.get('phone').errors?.pattern">Некоректний телефон</mat-error>
     </mat-form-field>
 
   <div class="gender-age">
     <div>
       <mat-label>Стать</mat-label>
-      <mat-radio-group aria-label="gender" class="radio-group" [(ngModel)]="user.gender" formControlName="gender">
+      <mat-radio-group aria-label="gender" class="radio-group" formControlName="gender">
         <mat-radio-button *ngFor="let gender of genders" [value]="gender.gender">{{gender.genderName}}</mat-radio-button>
       </mat-radio-group>
     </div>
     <mat-form-field appearance="outline" class="reg-input-age">
       <mat-label>Вік</mat-label>
-      <input matInput [(ngModel)]="user.age" name="age" type="number" min="10" max="50" placeholder="Вік" formControlName="age" required>
+      <input matInput name="age" type="number" min="10" max="50" placeholder="Вік" formControlName="age" required>
     </mat-form-field>
   </div>
 
     <mat-form-field appearance="outline" class="reg-input">
       <mat-label>Пароль</mat-label>
-      <input matInput [(ngModel)]="user.password" name="password" type="password" formControlName="password" placeholder="Пароль" required>
+      <input matInput name="password" type="password" formControlName="password" placeholder="Пароль" required>
       <mat-error *ngIf="registrationForm.get('password').errors?.minlength" class="reg-error">Ваш пароль занадто короткий</mat-error>
       <mat-error *ngIf="registrationForm.get('password').errors?.pattern" class="reg-error">Некоректний пароль</mat-error>
     </mat-form-field>
@@ -54,6 +54,5 @@
     <button class="reg-button" type="submit" [disabled]="registrationForm.invalid" (click)="registerUser()">Зареєструватися</button>
     <a [routerLink]="['v1/auth/signin']" class="btn-link" (click)="cancel()">Відміна</a>
   </form>
-  {{user | json}}
 </div>
 <router-outlet></router-outlet>

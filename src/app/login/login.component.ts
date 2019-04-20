@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../auth/auth.service';
-import { User } from '../users';
 
 @Component({
   selector: 'app-login',
@@ -13,19 +12,17 @@ import { User } from '../users';
 
 export class LoginComponent implements OnInit {
 
-  users: User[];
-  userForm: FormGroup;
-
-  loginUserData = {};
+  loginForm: FormGroup;
 
   constructor (
+    private formbilder: FormBuilder,
     private router: Router,
     private auth: AuthenticationService,
   ) { }
 
   ngOnInit() {
 
-    this.userForm = new FormGroup({
+    this.loginForm = this.formbilder.group({
      email: new FormControl('', Validators.compose([
         Validators.required
       ])),
@@ -36,20 +33,20 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.userForm.invalid) {
+    if (this.loginForm.invalid) {
       return;
     }
-    console.log('Вхідні дані:' + JSON.stringify(this.userForm.value))
   }
 
   loginUser() {
-    console.log('LoginData: ', this.loginUserData);
-    this.auth.loginUser(JSON.stringify(this.loginUserData))
+    console.log('Вхідні дані:' + JSON.stringify(this.loginForm.value))
+    this.auth.loginUser(JSON.stringify(this.loginForm.value))
         .subscribe(
-            res => {
-                console.log(res);
-                localStorage.setItem('token', res.token);
-                this.router.navigate(['v1/user']);
+            data => {
+                console.log(data);
+                console.log(data.token);
+                localStorage.setItem('token', data.token);
+                // this.router.navigate(['v1/user']);
             },
             err => console.log(err)
         );
