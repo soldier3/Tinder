@@ -8,13 +8,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
-import { RegistrationComponent } from './registration/registration.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { MessagesComponent } from './user/messages/messages.component';
 import { FilmsComponent } from './user/films/films.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule, MatSelectModule, MatInputModule, MatButtonModule, MatRadioModule } from '@angular/material';
-import { TokenInterceptorService } from './token-interceptor.service';
+
+import { CookieService } from 'ngx-cookie-service';
+import { TokenInterceptor } from './model/token-interceptor';
+// import { RouterModule, Routes } from '@angular/router';
+// import { TokenInterceptorService } from './token-interceptor.service';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +27,6 @@ import { TokenInterceptorService } from './token-interceptor.service';
     HomeComponent,
     LoginComponent,
     UserComponent,
-    RegistrationComponent,
     ProfileComponent,
     MessagesComponent,
     FilmsComponent,
@@ -43,9 +47,10 @@ import { TokenInterceptorService } from './token-interceptor.service';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptorService,
+      useClass: TokenInterceptor,
       multi: true
-    }
+    },
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
