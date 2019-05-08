@@ -5,9 +5,9 @@ import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
 const httpOptions = {
-  // headers: new HttpHeaders({
-  //   'Content-Type': 'application/json',
-  // })
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  })
 };
 
 @Injectable({
