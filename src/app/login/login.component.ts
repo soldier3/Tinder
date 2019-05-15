@@ -46,10 +46,10 @@ export class LoginComponent implements OnInit {
     this.auth.registerUser(this.registrationForm.value)
         .subscribe(
           data => {
-            console.log('data', data);
-            localStorage.setItem('token', data.token);
-            console.log(data.token);
-            this.router.navigate(['v1/auth/signin']);
+            console.log('data ==' + data);
+            // localStorage.setItem('token', data.token);
+            // console.log('data.t ==' + data);
+            //this.router.navigate(['v1/auth/signin']);
           },
             error => console.log(error)
         );
@@ -108,6 +108,8 @@ export class LoginComponent implements OnInit {
     let body = JSON.stringify(this.loginForm.value);
     this.auth.loginUser(body).subscribe((result: User) => {
       this.cookieService.set( 'Authorization', result.token );
+      console.log(result);
+      this.router.navigateByUrl('user');
     },
     error => {
       // error - объект ошибки

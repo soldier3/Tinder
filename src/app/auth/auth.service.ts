@@ -5,9 +5,9 @@ import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
 const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  })
+  // headers: new HttpHeaders({
+  //   'Content-Type': 'application/json',
+  // })
 };
 
 @Injectable({
@@ -18,16 +18,16 @@ export class AuthenticationService {
 
   AUTH_SERVER = "https://tindermoviebackend.herokuapp.com/";
 
-  // private registerUrl = 'https://tindermoviebackend.herokuapp.com/auth/signup';
-  // private loginUrl = 'https://tindermoviebackend.herokuapp.com/auth/signin';
-
   constructor(private httpClient: HttpClient) { }
 
   registerUser(user) {
-    console.log('AuthService registerUser', user);
     const body = JSON.stringify(user);
     console.log('body=', body);
-    return this.httpClient.post<any>(`${this.AUTH_SERVER}v1/auth/signup`, body, httpOptions);
+    return this.httpClient.post(`${this.AUTH_SERVER}v1/auth/signup`, body, httpOptions)
+    .pipe(
+      retry(3), // retry a failed request up to 3 times
+      catchError(this.handleError) // then handle the error
+    );
   }
 
   loginUser(body) {

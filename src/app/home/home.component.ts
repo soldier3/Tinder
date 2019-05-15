@@ -16,8 +16,6 @@ export class HomeComponent implements OnInit {
                private router: Router ) { }
 
   ngOnInit() {
-    // this.cookieService.set( 'user-token', 'Hello World' );
-    // this.cookieValue = this.cookieService.get('user-token');
     this.route();
   }
 
@@ -25,23 +23,9 @@ export class HomeComponent implements OnInit {
     let cookieExists: boolean = this.cookieService.check('Authorization');
 
     if (cookieExists) {
-      this.router.navigateByUrl('user/');
-      // .then(e => {
-      //   if (e) {
-      //     console.log("Navigation is successful!");
-      //   } else {
-      //     console.log("Navigation has failed!");
-      //   });
-      // }
+      this.router.navigateByUrl('user');
     } else {
       this.router.navigateByUrl('signup');
-      // .then(e => {
-      //   if (e) {
-      //     console.log("Navigation is successful!");
-      //   } else {
-      //     console.log("Navigation has failed!");
-      //   }
-      // }
     }
   }
 }

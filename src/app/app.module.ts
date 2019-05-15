@@ -16,8 +16,10 @@ import { MatTabsModule, MatSelectModule, MatInputModule, MatButtonModule, MatRad
 
 import { CookieService } from 'ngx-cookie-service';
 import { TokenInterceptor } from './model/token-interceptor';
+import { ShareService } from './service/share.service';
+
 // import { RouterModule, Routes } from '@angular/router';
-// import { TokenInterceptorService } from './token-interceptor.service';
+
 
 
 
@@ -50,7 +52,8 @@ import { TokenInterceptor } from './model/token-interceptor';
       useClass: TokenInterceptor,
       multi: true
     },
-    CookieService
+      CookieService,
+      ShareService
   ],
   bootstrap: [AppComponent]
 })
